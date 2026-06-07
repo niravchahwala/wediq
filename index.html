@@ -250,10 +250,19 @@
 
   .hero-pills {
     display: flex;
-    gap: 12px;
+    gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
+    padding: 0 20px;
+  }
+
+  @media (max-width: 480px) {
+    .pill {
+      font-size: 9px;
+      padding: 7px 14px;
+      letter-spacing: 1.5px;
+    }
   }
 
   .pill {
@@ -1068,7 +1077,7 @@
 
   /* MOBILE */
   @media (max-width: 768px) {
-    nav { padding: 16px 24px; }
+    nav { padding: 16px 20px; }
     .nav-links { display: none; }
     .hero { padding: 120px 28px 80px; }
     .logo-wed, .logo-i, .logo-q { font-size: 72px; }
@@ -1146,42 +1155,89 @@
 </section>
 
 <!-- MISSION STRIP -->
-<div style="background:#FFFFFF; border-top:1px solid rgba(193,127,36,0.15); border-bottom:1px solid rgba(193,127,36,0.15); padding:28px 60px; overflow:hidden;">
-  <div style="display:flex; align-items:center; justify-content:center; gap:0; max-width:1100px; margin:0 auto; flex-wrap:nowrap;">
-
-    <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 40px; flex:1; min-width:0;">
-      <span style="font-size:26px; line-height:1;">🌍</span>
-      <span style="font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#6B4E1E; white-space:nowrap;">Global Reach</span>
+<style>
+.mission-strip-wrap {
+  background:#FFFFFF;
+  border-top:1px solid rgba(193,127,36,0.15);
+  border-bottom:1px solid rgba(193,127,36,0.15);
+  padding:28px 40px;
+  overflow:hidden;
+}
+.mission-strip-inner {
+  display:grid;
+  grid-template-columns: 1fr 1px 1fr 1px 1fr 1px 1fr 1px 1fr;
+  align-items:center;
+  justify-items:center;
+  max-width:1100px;
+  margin:0 auto;
+}
+.mission-strip-item {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
+  padding:12px 16px;
+}
+.mission-strip-icon { font-size:26px; line-height:1; }
+.mission-strip-text {
+  font-size:9px;
+  font-weight:700;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  color:#6B4E1E;
+  text-align:center;
+  line-height:1.4;
+}
+.mission-strip-divider {
+  width:1px;
+  height:40px;
+  background:rgba(193,127,36,0.2);
+  justify-self:center;
+}
+@media (max-width: 768px) {
+  .mission-strip-inner {
+    grid-template-columns: 1fr 1fr;
+    gap:0;
+  }
+  .mission-strip-divider { display:none; }
+  .mission-strip-item {
+    padding:16px 12px;
+    border-bottom:1px solid rgba(193,127,36,0.1);
+  }
+  .mission-strip-text { font-size:9px; letter-spacing:1.5px; }
+}
+@media (max-width: 480px) {
+  .mission-strip-inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+</style>
+<div class="mission-strip-wrap">
+  <div class="mission-strip-inner">
+    <div class="mission-strip-item">
+      <span class="mission-strip-icon">🌍</span>
+      <span class="mission-strip-text">Global Reach</span>
     </div>
-
-    <div style="width:1px; height:40px; background:rgba(193,127,36,0.2); flex-shrink:0;"></div>
-
-    <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 40px; flex:1; min-width:0;">
-      <span style="font-size:26px; line-height:1;">🤝</span>
-      <span style="font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#6B4E1E; white-space:nowrap;">Strong Community</span>
+    <div class="mission-strip-divider"></div>
+    <div class="mission-strip-item">
+      <span class="mission-strip-icon">🤝</span>
+      <span class="mission-strip-text">Strong Community</span>
     </div>
-
-    <div style="width:1px; height:40px; background:rgba(193,127,36,0.2); flex-shrink:0;"></div>
-
-    <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 40px; flex:1; min-width:0;">
-      <span style="font-size:26px; line-height:1;">🧠</span>
-      <span style="font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#6B4E1E; white-space:nowrap;">AI Powered Intelligence</span>
+    <div class="mission-strip-divider"></div>
+    <div class="mission-strip-item">
+      <span class="mission-strip-icon">🧠</span>
+      <span class="mission-strip-text">AI Powered Intelligence</span>
     </div>
-
-    <div style="width:1px; height:40px; background:rgba(193,127,36,0.2); flex-shrink:0;"></div>
-
-    <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 40px; flex:1; min-width:0;">
-      <span style="font-size:26px; line-height:1;">💎</span>
-      <span style="font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#6B4E1E; white-space:nowrap;">Premium Experiences</span>
+    <div class="mission-strip-divider"></div>
+    <div class="mission-strip-item">
+      <span class="mission-strip-icon">💎</span>
+      <span class="mission-strip-text">Premium Experiences</span>
     </div>
-
-    <div style="width:1px; height:40px; background:rgba(193,127,36,0.2); flex-shrink:0;"></div>
-
-    <div style="display:flex; flex-direction:column; align-items:center; gap:8px; padding:0 40px; flex:1; min-width:0;">
-      <span style="font-size:26px; line-height:1;">❤️</span>
-      <span style="font-size:9px; font-weight:700; letter-spacing:2.5px; text-transform:uppercase; color:#6B4E1E; white-space:nowrap;">Built With Passion</span>
+    <div class="mission-strip-divider"></div>
+    <div class="mission-strip-item">
+      <span class="mission-strip-icon">❤️</span>
+      <span class="mission-strip-text">Built With Passion</span>
     </div>
-
   </div>
 </div>
 
